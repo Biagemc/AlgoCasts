@@ -9,13 +9,14 @@
 
 function capitalize(str) {
   let splittedStr = str.split(" ");
+  const newStr = [];
 
-  for (let i = 0; i < splittedStr.length; i++) {
-    let capitalizeChar = splittedStr[i][0].toUpperCase();
-    let lowerChars = splittedStr[i].slice(1);
-    splittedStr[i] = capitalizeChar + lowerChars;
+  for (let word of splittedStr) {
+    let capitalizeChar = word[0].toUpperCase();
+    let lowerChars = word.slice(1);
+    newStr.push(capitalizeChar + lowerChars);
   }
-  return splittedStr.join(" ");
+  return newStr.join(" ");
 }
 console.log(capitalize("look, it is working!"));
 module.exports = capitalize;
